@@ -15,7 +15,9 @@ public class Localizador {
         for (int i = 0; i < alunosAno.size(); i++) {
             valorTotal += alunosAno.get(i).getValor();
         }
-        return valorTotal/alunosAno.size();
+        double res = valorTotal/alunosAno.size();
+        System.out.println("Media de valores do ano " + ano + ": R$" + res);
+        return res;
     }
 
     public void buscaBolsistaZero(List<Aluno> bolsistas ,int ano) {

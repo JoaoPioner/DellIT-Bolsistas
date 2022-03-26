@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestesLocalizador" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-26T14:18:43" hostname="DESKTOP-8SGBJ9I" time="0.036">
+  <properties/>
+  <testcase name="testeBuscaBolsista()" classname="TestesLocalizador" time="0.036"/>
+  <system-out><![CDATA[____________
+Aluno: K PBPW
+Ano: 2000
+Entidade de Ensino: PUC
+Valor: 100.0____________
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

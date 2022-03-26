@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Localizador {
     public Localizador(){}
@@ -23,12 +22,12 @@ public class Localizador {
         for (Aluno a:
              bolsistas) {
             if (a.isBolsistaZero() && a.getAno() == ano) {
-                System.out.println( "____________" +
+                System.out.println( "\n____________" +
                                     "\nAluno: " + a.getNome() +
                                     "\nCPF: "+ a.getCpf() +
                                     "\nEntidade de Ensino: " + a.getentidade() +
                                     "\nValor: " + a.getValor() +
-                                    "____________");
+                                    "\n____________");
             }
         }
     }
@@ -47,6 +46,19 @@ public class Localizador {
                                     "____________");
             }
         }
+    }
+
+    public void buscaRank (List<Aluno> bolsista) {
+        ArrayList<Aluno> bolsistasOrdenados = new ArrayList<>(bolsista);
+        Collections.sort(bolsistasOrdenados, Comparator.naturalOrder());
+        System.out.println( "3 Bolsas mais caras: " +
+                            "\n1: " + bolsistasOrdenados.get(bolsistasOrdenados.size()-1) +
+                            "\n2: " + bolsistasOrdenados.get(bolsistasOrdenados.size()-2) +
+                            "\n3: " + bolsistasOrdenados.get(bolsistasOrdenados.size()-3) +
+                            "\n3 bolsas mais baratas: " +
+                            "\n 1: " + bolsistasOrdenados.get(0) +
+                            "\n 2: " + bolsistasOrdenados.get(1) +
+                            "\n 3: " + bolsistasOrdenados.get(2));
     }
 
 }

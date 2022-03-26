@@ -1,4 +1,4 @@
-public class Aluno {
+public class Aluno implements Comparable<Aluno>{
     private String nome;
     private String cpf;
     private String entidade;
@@ -65,11 +65,22 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return  "____________" +
+        return  "\n____________" +
                 "\nAluno: " + nome +
                 "\nCPF: "+ cpf +
                 "\nEntidade de Ensino: " + entidade +
                 "\nValor: " + valor +
-                "____________" ;
+                "\n____________" ;
+    }
+
+    @Override
+    public int compareTo(Aluno aluno) {
+        if (this.valor < aluno.getValor()) {
+            return -1;
+        }
+        if (this.valor > aluno.getValor()) {
+            return 1;
+        }
+        return 0;
     }
 }

@@ -27,7 +27,7 @@ public class Localizador {
                 System.out.println( "\n____________" +
                                     "\nAluno: " + a.getNome() +
                                     "\nCPF: "+ a.getCpf() +
-                                    "\nEntidade de Ensino: " + a.getentidade() +
+                                    "\nEntidade de Ensino: " + a.getEntidade() +
                                     "\nValor: " + a.getValor() +
                                     "\n____________");
             }
@@ -43,7 +43,7 @@ public class Localizador {
                 System.out.println( "____________" +
                                     "\nAluno: " + nomeCodificado +
                                     "\nAno: "+ a.getAno() +
-                                    "\nEntidade de Ensino: " + a.getentidade() +
+                                    "\nEntidade de Ensino: " + a.getEntidade() +
                                     "\nValor: " + a.getValor() +
                                     "____________");
             }

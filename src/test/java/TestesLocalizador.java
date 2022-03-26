@@ -7,9 +7,9 @@ public class TestesLocalizador {
     void testeBuscaRank() {
        Localizador buscador = new Localizador();
         ArrayList<Aluno> bolsistas = new ArrayList<>();
-        bolsistas.add(new Aluno("Joao V", "000000", "PUC", 100, 2000, true));
-        bolsistas.add(new Aluno("Joao P", "000010", "PUX", 50, 2000, false));
-        bolsistas.add(new Aluno("Joao A", "000110", "PUQ", 200, 2000, false));
+        bolsistas.add(new Aluno("JOAO V", "000001", "PUC", 1, 2000, "DED", "POA", "SGB", "TUTOR", "R$", 100));
+        bolsistas.add(new Aluno("JOAO P", "000011", "PUC", 1, 2000, "DED", "CXS", "SGB", "TUTOR", "R$", 50));
+        bolsistas.add(new Aluno("JOAO A", "000111", "PUC", 1, 2000, "DED", "SPO", "SGB", "TUTOR", "R$", 200));
         buscador.buscaRank(bolsistas);
     }
 
@@ -17,9 +17,9 @@ public class TestesLocalizador {
     void testeBuscaBolsista() {
         Localizador buscador = new Localizador();
         ArrayList<Aluno> bolsistas = new ArrayList<>();
-        bolsistas.add(new Aluno("JOAO V", "000000", "PUC", 100, 2000, true));
-        bolsistas.add(new Aluno("JOAO P", "000010", "PUX", 50, 2000, false));
-        bolsistas.add(new Aluno("JOAO A", "000110", "PUQ", 200, 2000, false));
+        bolsistas.add(new Aluno("JOAO V", "000001", "PUC", 1, 2000, "DED", "POA", "SGB", "TUTOR", "R$", 100));
+        bolsistas.add(new Aluno("JOAO P", "000011", "PUC", 1, 2000, "DED", "CXS", "SGB", "TUTOR", "R$", 50));
+        bolsistas.add(new Aluno("JOAO A", "000111", "PUC", 1, 2000, "DED", "SPO", "SGB", "TUTOR", "R$", 200));
         buscador.buscaBolsista(bolsistas, "JOAO V");
     }
 
@@ -27,9 +27,9 @@ public class TestesLocalizador {
     void testeBuscaBolsistaZero() {
         Localizador buscador = new Localizador();
         ArrayList<Aluno> bolsistas = new ArrayList<>();
-        bolsistas.add(new Aluno("JOAO V", "000000", "PUC", 100, 2000, true));
-        bolsistas.add(new Aluno("JOAO P", "000010", "PUX", 50, 2000, false));
-        bolsistas.add(new Aluno("JOAO A", "000110", "PUQ", 200, 2000, false));
+        bolsistas.add(new Aluno("JOAO V", "000001", "PUC", 1, 2000, "DED", "POA", "SGB", "TUTOR", "R$", 100));
+        bolsistas.add(new Aluno("JOAO P", "000011", "PUC", 1, 2000, "DED", "CXS", "SGB", "TUTOR", "R$", 50));
+        bolsistas.add(new Aluno("JOAO A", "000111", "PUC", 1, 2000, "DED", "SPO", "SGB", "TUTOR", "R$", 200));
         buscador.buscaBolsistaZero(bolsistas, 2000);
     }
 
@@ -37,9 +37,9 @@ public class TestesLocalizador {
     void testeMediaValores() {
         Localizador buscador = new Localizador();
         ArrayList<Aluno> bolsistas = new ArrayList<>();
-        bolsistas.add(new Aluno("JOAO V", "000000", "PUC", 100, 2000, true));
-        bolsistas.add(new Aluno("JOAO P", "000010", "PUX", 50, 2000, false));
-        bolsistas.add(new Aluno("JOAO A", "000110", "PUQ", 200, 2000, false));
+        bolsistas.add(new Aluno("JOAO V", "000001", "PUC", 1, 2000, "DED", "POA", "SGB", "TUTOR", "R$", 100));
+        bolsistas.add(new Aluno("JOAO P", "000011", "PUC", 1, 2000, "DED", "CXS", "SGB", "TUTOR", "R$", 50));
+        bolsistas.add(new Aluno("JOAO A", "000111", "PUC", 1, 2000, "DED", "SPO", "SGB", "TUTOR", "R$", 200));
         double valorEsperado = 116.66666666666666666666666666667;
         assertEquals(valorEsperado,buscador.buscaMediaValoresAno(bolsistas, 2000));
     }

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestesBusca" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-27T21:43:27" hostname="DESKTOP-8SGBJ9I" time="0.082">
+<testsuite name="TestesBusca" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-03-27T23:01:41" hostname="DESKTOP-8SGBJ9I" time="0.097">
   <properties/>
-  <testcase name="testeBuscaRank()" classname="TestesBusca" time="0.082"/>
+  <testcase name="testeBuscaRank()" classname="TestesBusca" time="0.071"/>
+  <testcase name="testeBuscaBolsista()" classname="TestesBusca" time="0.017"/>
+  <testcase name="testeBuscaBolsistaZero()" classname="TestesBusca" time="0.001"/>
+  <testcase name="testeMediaValores()" classname="TestesBusca" time="0.006"/>
   <system-out><![CDATA[3 Bolsas mais caras: 
 1: 
 Nome: JOAO A
@@ -82,6 +85,12 @@ MODALIDADE PG: TUTOR
 MOEDA: R$
 VALOR: 200.0
 ____________
+____________
+Aluno: K PBPW
+Ano: 2000
+Entidade de Ensino: PUC
+Valor: 100.0____________
+Media de valores do ano 2000: R$116.66666666666667
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

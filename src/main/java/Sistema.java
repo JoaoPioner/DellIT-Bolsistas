@@ -10,7 +10,7 @@ public class Sistema {
     private static final String fonte = "src/main/resources/br-capes-bolsistas-uab.csv";
     private static final Scanner teclado = new Scanner(System.in);
     private static final ArrayList<Aluno> bolsistas = new ArrayList<>();
-
+    private static ArrayList<Integer> anos = new ArrayList<>();
     public static void main(String[] args) throws FileNotFoundException {// INICIO DO PROGRAMA
         load(fonte);
         interfaceSistema();
@@ -22,8 +22,6 @@ public class Sistema {
         String[] linhaLst;
 
         Aluno a;
-
-        ArrayList<Integer> anos = new ArrayList<>();
 
         try {
             br.readLine();
@@ -70,6 +68,9 @@ public class Sistema {
                 case 1: {//[Consultar bolsa zero/Ano]
                     System.out.println("Por favor, Insira um ano:");
                     int ano =  teclado.nextInt();
+                    if(!anos.contains(ano)) {
+                        System.out.println("Ano inserido nao existente no arquivo, tente inserir outro ano");
+                    }
                     local.buscaBolsistaZero(bolsistas,ano);
                 }break;
                 case 2: {//[Codificar nomes]
@@ -82,6 +83,9 @@ public class Sistema {
                 case 3: {//[Consultar média anual]
                     System.out.println("Por favor, Insira um ano:");
                     int ano = teclado.nextInt();
+                    if(!anos.contains(ano)) {
+                        System.out.println("Ano inserido nao existente no arquivo, tente inserir outro ano");
+                    }
                     local.buscaMediaValoresAno(bolsistas,ano);
                 }break;
                 case 4: {//[Ranking valores de bolsa]

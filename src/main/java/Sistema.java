@@ -1,3 +1,4 @@
+/* @Author: Joao Vitor de Almeida Prado Pioner*/
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -6,12 +7,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Sistema {
-    private static String fonte = "src/main/resources/br-capes-bolsistas-uab.csv";
-    private static Scanner teclado = new Scanner(System.in);
-    private static ArrayList<Aluno> bolsistas = new ArrayList<>();
-    public static void load(String fonte)throws FileNotFoundException  {
+    private static final String fonte = "src/main/resources/br-capes-bolsistas-uab.csv";
+    private static final Scanner teclado = new Scanner(System.in);
+    private static final ArrayList<Aluno> bolsistas = new ArrayList<>();
+
+    public static void main(String[] args) throws FileNotFoundException {// INICIO DO PROGRAMA
+        load(fonte);
+        interfaceSistema();
+    }
+
+    public static void load(String fonte)throws FileNotFoundException  { // carrega o arquivo .csv
         BufferedReader br = new BufferedReader(new FileReader(fonte));
-        String linha = "";
+        String linha;
         String[] linhaLst;
 
         Aluno a;
@@ -21,7 +28,6 @@ public class Sistema {
         try {
             br.readLine();
             while ((linha = br.readLine()) != null) {
-                try {
                     linhaLst = linha.split(";");
                     a = new Aluno(  linhaLst[0],
                             linhaLst[1],
@@ -39,58 +45,49 @@ public class Sistema {
                         anos.add(a.getAno());
                     }
                     bolsistas.add(a);
-                }catch (NumberFormatException e) {
-                    continue;
-                }
             }
             br.close();
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (NumberFormatException | IOException e) {
             e.printStackTrace();
         }
-        System.out.println(bolsistas.size() + " carregados...");
-    }
-    public static void main(String[] args) throws FileNotFoundException {
-        load(fonte);
-        interfaceSistema();
+        System.out.println(bolsistas.size() + " carregados...");// uma resposta visual para o usuario, para dizer que o load funcionou
     }
 
-    private static void interfaceSistema() {
-        int escolha = 0;
-        System.out.println("Seja bem-vindo ao sistema de internacoes de Porto Alegre");
+    private static void interfaceSistema() {// onde o usuario interage com o sistema
+        int escolha;
+        System.out.println("Seja bem-vindo ao sistema de bolsistas de Porto Alegre");
         boolean loop = true;
-        Localizador local = new Localizador();
-        while(loop) {
+        Busca local = new Busca();
+        while(loop) {// um loop infinito (inicialmente) que recebe o input do usuario
             System.out.println("Por favor selecione um servico: \n");
             System.out.println("1- Consultar bolsa zero/Ano");
-            System.out.println("2- Codificar nomes");
+            System.out.println("2- Conferir dados de bolsista");
             System.out.println("3- Consultar média anual");
             System.out.println("4- Ranking valores de bolsa");
             System.out.println("0- Terminar o programa\n");
             escolha = teclado.nextInt();
             switch (escolha) {
-                case 1: {
-                    System.out.println("Insira um ano:");
+                case 1: {//[Consultar bolsa zero/Ano]
+                    System.out.println("Por favor, Insira um ano:");
                     int ano =  teclado.nextInt();
                     local.buscaBolsistaZero(bolsistas,ano);
                 }break;
-                case 2: {
+                case 2: {//[Codificar nomes]
                     teclado.nextLine();
-                    String nome = "";
+                    String nome;
                     System.out.println("Por favor, insira um nome: ");
-                    nome = teclado.nextLine();
+                    nome = teclado.nextLine().toUpperCase();
                     local.buscaBolsista(bolsistas,nome);
                 }break;
-                case 3: {
-                    System.out.println("Insira um ano:");
+                case 3: {//[Consultar média anual]
+                    System.out.println("Por favor, Insira um ano:");
                     int ano = teclado.nextInt();
                     local.buscaMediaValoresAno(bolsistas,ano);
                 }break;
-                case 4: {
+                case 4: {//[Ranking valores de bolsa]
                     local.buscaRank(bolsistas);
                 }break;
-                case 0: {
+                case 0: {//[Terminar o programa]
                     System.out.println("Obrigado");
                     loop = false;
                 }break;

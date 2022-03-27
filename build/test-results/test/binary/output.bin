@@ -1,0 +1,92 @@
+3 Bolsas mais caras: 
+1: 
+Nome: JOAO A
+CPF: 000111
+ENTIDADE: PUQ
+MES: 1
+
+ANO: 2000
+DIRETORIA: DED
+ORIGEM: SPO
+MODALIDADE SGB: SGB
+MODALIDADE PG: TUTOR
+
+MOEDA: R$
+VALOR: 200.0
+____________
+2: 
+Nome: JOAO V
+CPF: 000001
+ENTIDADE: PUC
+MES: 1
+
+ANO: 2000
+DIRETORIA: DED
+ORIGEM: POA
+MODALIDADE SGB: SGB
+MODALIDADE PG: TUTOR
+
+MOEDA: R$
+VALOR: 100.0
+____________
+3: 
+Nome: JOAO P
+CPF: 000011
+ENTIDADE: PUX
+MES: 1
+
+ANO: 2000
+DIRETORIA: DED
+ORIGEM: CXS
+MODALIDADE SGB: SGB
+MODALIDADE PG: TUTOR
+
+MOEDA: R$
+VALOR: 50.0
+____________
+3 bolsas mais baratas: 
+1: 
+Nome: JOAO P
+CPF: 000011
+ENTIDADE: PUX
+MES: 1
+
+ANO: 2000
+DIRETORIA: DED
+ORIGEM: CXS
+MODALIDADE SGB: SGB
+MODALIDADE PG: TUTOR
+
+MOEDA: R$
+VALOR: 50.0
+____________
+2: 
+Nome: JOAO V
+CPF: 000001
+ENTIDADE: PUC
+MES: 1
+
+ANO: 2000
+DIRETORIA: DED
+ORIGEM: POA
+MODALIDADE SGB: SGB
+MODALIDADE PG: TUTOR
+
+MOEDA: R$
+VALOR: 100.0
+____________
+3: 
+Nome: JOAO A
+CPF: 000111
+ENTIDADE: PUQ
+MES: 1
+
+ANO: 2000
+DIRETORIA: DED
+ORIGEM: SPO
+MODALIDADE SGB: SGB
+MODALIDADE PG: TUTOR
+
+MOEDA: R$
+VALOR: 200.0
+____________

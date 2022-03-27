@@ -1,15 +1,17 @@
+/* @Author: Joao Vitor de Almeida Prado Pioner*/
 public class Aluno implements Comparable<Aluno>{
-    private String nome;
-    private String cpf;
-    private String entidade;
-    private int mes;
-    private int ano;
-    private String diretoria;
-    private String origem;
-    private String modalidadeSGB;
-    private String modalidadePG;
-    private String moeda;
-    private double valor;
+    /* Tudo que nao pode ser modificado se tornou final*/
+    private final String nome;
+    private final String cpf;
+    private final String entidade;
+    private final int mes;
+    private final int ano;
+    private final String diretoria;
+    private final String origem;
+    private final String modalidadeSGB;
+    private final String modalidadePG;
+    private final String moeda;
+    private final double valor;
     private boolean bolsistaZero;
 
     public Aluno(String nome, String cpf, String entidade, int mes, int ano, String diretoria, String origem, String modalidadeSGB, String modalidadePG, String moeda, double valor) {
@@ -26,93 +28,25 @@ public class Aluno implements Comparable<Aluno>{
         this.valor = valor;
         bolsistaZero = false;
     }
-
+    /*Todos os getter e setters que foram usados*/
     public String getNome() {
         return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public String getEntidade() {
         return entidade;
-    }
-
-    public void setEntidade(String entidade) {
-        this.entidade = entidade;
-    }
-
-    public int getMes() {
-        return mes;
-    }
-
-    public void setMes(int mes) {
-        this.mes = mes;
     }
 
     public int getAno() {
         return ano;
     }
 
-    public void setAno(int ano) {
-        this.ano = ano;
-    }
-
-    public String getDiretoria() {
-        return diretoria;
-    }
-
-    public void setDiretoria(String diretoria) {
-        this.diretoria = diretoria;
-    }
-
-    public String getOrigem() {
-        return origem;
-    }
-
-    public void setOrigem(String origem) {
-        this.origem = origem;
-    }
-
-    public String getModalidadeSGB() {
-        return modalidadeSGB;
-    }
-
-    public void setModalidadeSGB(String modalidadeSGB) {
-        this.modalidadeSGB = modalidadeSGB;
-    }
-
-    public String getModalidadePG() {
-        return modalidadePG;
-    }
-
-    public void setModalidadePG(String modalidadePG) {
-        this.modalidadePG = modalidadePG;
-    }
-
-    public String getMoeda() {
-        return moeda;
-    }
-
-    public void setMoeda(String moeda) {
-        this.moeda = moeda;
-    }
-
     public double getValor() {
         return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
     }
 
     public boolean isBolsistaZero() {
@@ -139,14 +73,9 @@ public class Aluno implements Comparable<Aluno>{
                 "\n____________";
     }
 
+    //Usado para ordenar os bolsistas pelo valor das suas bolsas
     @Override
     public int compareTo(Aluno aluno) {
-        if (this.valor < aluno.getValor()) {
-            return -1;
-        }
-        if (this.valor > aluno.getValor()) {
-            return 1;
-        }
-        return 0;
+        return Double.compare(this.valor, aluno.getValor());
     }
 }
